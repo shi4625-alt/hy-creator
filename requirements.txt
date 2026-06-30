@@ -1,4 +1,5 @@
 streamlit>=1.28.0
-amadeus>=1.2.0
-requests>=2.27.0
 pandas>=1.4.0
+plotly>=5.15.0
+kaleido>=0.2.0
+openpyxl>=3.0.0
