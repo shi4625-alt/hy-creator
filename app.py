@@ -13,42 +13,86 @@ st.markdown("""
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap');
 html, body, [class*="css"] { font-family: 'Noto Sans KR', sans-serif; }
-.stApp { background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); }
+.stApp { background: linear-gradient(135deg, #0f0c29 0%, #1a1a3e 100%); }
 .main-header {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #00b4db 0%, #0083b0 50%, #005b7a 100%);
     padding: 1.5rem 2rem; border-radius: 20px; color: white;
-    margin-bottom: 2rem; box-shadow: 0 10px 30px rgba(102,126,234,0.4);
+    margin-bottom: 2rem; box-shadow: 0 10px 30px rgba(0,180,219,0.3);
 }
 .main-header h1 { margin: 0; font-weight: 900; font-size: 2.2rem; }
 .main-header p { margin: 0.3rem 0 0; opacity: 0.85; font-weight: 300; }
 .card {
-    background: white; border-radius: 16px; padding: 1.5rem;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.06); margin-bottom: 1.5rem;
-    border: 1px solid rgba(255,255,255,0.8);
+    background: #1e1e42; border-radius: 16px; padding: 1.5rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2); margin-bottom: 1.5rem;
+    border: 1px solid rgba(255,255,255,0.06);
 }
-.card h3 { color: #333; font-weight: 700; margin-top: 0; font-size: 1.1rem; }
+.card h3 { color: #e0e0ff; font-weight: 700; margin-top: 0; font-size: 1.1rem; }
 .metric-box {
-    background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+    background: linear-gradient(135deg, rgba(0,180,219,0.12) 0%, rgba(0,131,176,0.12) 100%);
     border-radius: 12px; padding: 1.2rem; text-align: center;
-    border: 1px solid #667eea20;
+    border: 1px solid rgba(0,180,219,0.15);
 }
 .metric-box .val {
     font-size: 1.8rem; font-weight: 900;
-    background: linear-gradient(135deg, #667eea, #764ba2);
+    background: linear-gradient(135deg, #00d2ff, #3a7bd5);
     -webkit-background-clip: text; -webkit-text-fill-color: transparent;
 }
-.metric-box .label { font-size: 0.8rem; color: #666; font-weight: 500; margin-top: 0.2rem; }
+.metric-box .label { font-size: 0.8rem; color: #8899bb; font-weight: 500; margin-top: 0.2rem; }
 .stButton button {
     border-radius: 12px !important; font-weight: 600 !important;
     border: none !important; transition: all 0.2s !important;
+    background: linear-gradient(135deg, #00b4db, #0083b0) !important;
+    color: white !important;
 }
-.stButton button:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.12) !important; }
-div[data-testid="stDataFrame"] { border-radius: 12px; overflow: hidden; border: 1px solid #eee; }
-.st-emotion-cache-1aehpvj { color: #667eea !important; }
-.st-emotion-cache-1aehpvj p, .st-emotion-cache-1aehpvj span { color: #667eea !important; }
-div[role="radiogroup"] label p, div[role="radiogroup"] label span { color: #333 !important; }
-div[role="radiogroup"] label { color: #333 !important; }
-.stRadio div[data-testid="stMarkdownContainer"] p { color: #333 !important; }
+.stButton button:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,180,219,0.3) !important; }
+div[data-testid="stDataFrame"] { border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08); }
+.stTabs [data-baseweb="tab-list"] { gap: 0.5rem; }
+.stTabs [data-baseweb="tab"] {
+    background: rgba(255,255,255,0.05) !important;
+    border-radius: 12px !important;
+    padding: 0.6rem 1.5rem !important;
+    color: #8899bb !important;
+    font-weight: 600 !important;
+    border: 1px solid transparent !important;
+}
+.stTabs [aria-selected="true"] {
+    background: linear-gradient(135deg, #00b4db, #0083b0) !important;
+    color: white !important;
+    border-color: transparent !important;
+    box-shadow: 0 4px 15px rgba(0,180,219,0.3) !important;
+}
+.stTabs [data-baseweb="tab"]:hover { background: rgba(255,255,255,0.08) !important; }
+div[role="radiogroup"] { background: rgba(255,255,255,0.03); border-radius: 12px; padding: 0.3rem; }
+div[role="radiogroup"] label {
+    background: transparent !important;
+    border-radius: 10px !important;
+    padding: 0.4rem 1rem !important;
+    color: #8899bb !important;
+}
+div[role="radiogroup"] label[data-checked="true"] {
+    background: linear-gradient(135deg, #00b4db, #0083b0) !important;
+    color: white !important;
+}
+div[role="radiogroup"] label p, div[role="radiogroup"] label span { color: inherit !important; }
+.st-emotion-cache-1aehpvj, .st-emotion-cache-1aehpvj p, .st-emotion-cache-1aehpvj span { color: #00b4db !important; }
+.stSelectbox div[data-baseweb="select"] { background: rgba(255,255,255,0.05) !important; border-color: rgba(255,255,255,0.1) !important; color: white !important; border-radius: 10px !important; }
+.stSelectbox div[data-baseweb="select"]:hover { border-color: #00b4db !important; }
+.stTextInput input { background: rgba(255,255,255,0.05) !important; border-color: rgba(255,255,255,0.1) !important; color: white !important; border-radius: 10px !important; }
+.stTextInput input:focus { border-color: #00b4db !important; box-shadow: 0 0 0 2px rgba(0,180,219,0.2) !important; }
+.stSlider div[data-baseweb="slider"] div { background: #00b4db !important; }
+div[data-testid="stDataFrame"] { color: #ccd !important; }
+div[data-testid="stDataFrame"] th { background: rgba(0,180,219,0.1) !important; color: #00b4db !important; }
+.stDataFrame { color: #ccd !important; }
+p, li, span, div { color: #ccd; }
+h1, h2, h3, h4, h5, h6 { color: #e0e0ff !important; }
+.stAlert { background: rgba(255,255,255,0.05) !important; border: 1px solid rgba(255,255,255,0.1) !important; color: #ccd !important; }
+.st-ae { color: #ccd !important; }
+.st-emotion-cache-183lzff { color: #ccd !important; }
+.stNumberInput input { background: rgba(255,255,255,0.05) !important; border-color: rgba(255,255,255,0.1) !important; color: white !important; border-radius: 10px !important; }
+.stNumberInput input:focus { border-color: #00b4db !important; }
+.stMultiSelect div[data-baseweb="select"] { background: rgba(255,255,255,0.05) !important; border-color: rgba(255,255,255,0.1) !important; }
+div[data-testid="stFileUploader"] { background: rgba(255,255,255,0.03) !important; border: 1px dashed rgba(0,180,219,0.3) !important; border-radius: 12px !important; padding: 1rem !important; }
+div[data-testid="stFileUploader"]:hover { border-color: #00b4db !important; }
 </style>
 """, unsafe_allow_html=True)
 
@@ -413,8 +457,8 @@ if st.session_state.df is None:
 df = st.session_state.df
 info = detect_data_type(df)
 num_cols, cat_cols = info["num_cols"], info["cat_cols"]
-colors = ["#667eea", "#764ba2", "#a78bfa", "#8b5cf6", "#7c3aed",
-          "#06b6d4", "#0891b2", "#22d55e", "#16a34a", "#f97316"]
+colors = ["#00b4db", "#0083b0", "#00d2ff", "#3a7bd5", "#0abde3",
+          "#48dbfb", "#1dd1a1", "#10ac84", "#f368e0", "#ff9f43"]
 
 with col_preview:
     st.markdown(f'<div style="display:flex;gap:0.5rem;flex-wrap:wrap;margin-bottom:0.5rem;">', unsafe_allow_html=True)
@@ -515,15 +559,15 @@ with tab3:
         color_col = st.selectbox("색상 구분", ["없음"] + df.columns.tolist())
         color_col = None if color_col == "없음" else color_col
         title_text = st.text_input("그래프 제목", placeholder="자동 생성")
-        theme = st.selectbox("테마", ["plotly_white", "plotly_dark", "ggplot2", "seaborn"])
-        palette = st.selectbox("컬러 팔레트", ["모던 퍼플", "오션 블루", "선셋 오렌지",
-                                              "포레스트 그린", "로즈 핑크"])
+        theme = st.selectbox("테마", ["plotly_dark", "plotly_white", "ggplot2", "seaborn"])
+        palette = st.selectbox("컬러 팔레트", ["시안 블루", "코랄 선셋", "민트 그린",
+                                              "라벤더 퍼플", "골드 웜"])
         pmap = {
-            "모던 퍼플": ["#667eea", "#764ba2", "#a78bfa", "#8b5cf6", "#7c3aed"],
-            "오션 블루": ["#06b6d4", "#0891b2", "#22d3ee", "#0e7490", "#38bdf8"],
-            "선셋 오렌지": ["#f97316", "#ea580c", "#fdba74", "#d97706", "#fb923c"],
-            "포레스트 그린": ["#22c55e", "#16a34a", "#4ade80", "#15803d", "#86efac"],
-            "로즈 핑크": ["#ec4899", "#db2777", "#f472b6", "#be185d", "#fbcfe8"],
+            "시안 블루": ["#00b4db", "#0083b0", "#00d2ff", "#3a7bd5", "#0abde3"],
+            "코랄 선셋": ["#ff6b6b", "#ee5a24", "#ff9f43", "#feca57", "#ff4757"],
+            "민트 그린": ["#1dd1a1", "#10ac84", "#55efc4", "#00b894", "#81ecec"],
+            "라벤더 퍼플": ["#a29bfe", "#6c5ce7", "#dda0dd", "#bb8fce", "#9b59b6"],
+            "골드 웜": ["#fdcb6e", "#e17055", "#f39c12", "#d35400", "#e67e22"],
         }
         pcolors = pmap[palette]
 
