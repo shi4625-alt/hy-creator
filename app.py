@@ -44,6 +44,11 @@ html, body, [class*="css"] { font-family: 'Noto Sans KR', sans-serif; }
 }
 .stButton button:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.12) !important; }
 div[data-testid="stDataFrame"] { border-radius: 12px; overflow: hidden; border: 1px solid #eee; }
+.st-emotion-cache-1aehpvj { color: #667eea !important; }
+.st-emotion-cache-1aehpvj p, .st-emotion-cache-1aehpvj span { color: #667eea !important; }
+div[role="radiogroup"] label p, div[role="radiogroup"] label span { color: #333 !important; }
+div[role="radiogroup"] label { color: #333 !important; }
+.stRadio div[data-testid="stMarkdownContainer"] p { color: #333 !important; }
 </style>
 """, unsafe_allow_html=True)
 
