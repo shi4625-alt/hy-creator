@@ -1,2 +1,4 @@
 streamlit>=1.28.0
-python-pptx>=1.0.0
+amadeus>=1.2.0
+requests>=2.27.0
+pandas>=1.4.0
