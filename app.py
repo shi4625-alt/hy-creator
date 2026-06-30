@@ -572,10 +572,21 @@ with tab3:
                                       plot_bgcolor="rgba(0,0,0,0)",
                                       paper_bgcolor="rgba(0,0,0,0)")
                     st.plotly_chart(fig, use_container_width=True)
-                    hb = fig.to_html(include_plotlyjs="cdn").encode()
-                    st.download_button("🌐 HTML 다운로드", data=hb,
-                                       file_name=f"{title_text or 'chart'}.html",
-                                       mime="text/html", use_container_width=True)
+                    col_dl1, col_dl2 = st.columns(2)
+                    with col_dl1:
+                        hb = fig.to_html(include_plotlyjs="cdn").encode()
+                        st.download_button("🌐 HTML 다운로드", data=hb,
+                                           file_name=f"{title_text or 'chart'}.html",
+                                           mime="text/html", use_container_width=True)
+                    with col_dl2:
+                        try:
+                            import plotly.io as pio
+                            png = pio.to_image(fig, format="png", width=1200, height=700, scale=2)
+                            st.download_button("📷 PNG 다운로드", data=png,
+                                               file_name=f"{title_text or 'chart'}.png",
+                                               mime="image/png", use_container_width=True)
+                        except Exception:
+                            st.info("PNG 저장은 HTML 다운로드 후 브라우저에서 저장해주세요")
             except Exception as e:
                 st.error(f"생성 실패: {e}")
     st.markdown('</div>', unsafe_allow_html=True)
