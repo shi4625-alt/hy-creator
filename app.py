@@ -180,14 +180,17 @@ if st.session_state.df is not None:
         col_exp1, col_exp2, col_exp3 = st.columns(3)
 
         with col_exp1:
-            img_bytes = fig.to_image(format="png", width=1200, height=700, scale=2)
-            st.download_button(
-                label="📷 PNG 이미지 다운로드",
-                data=img_bytes,
-                file_name=f"chart_{st.session_state.current_title or 'graph'}.png",
-                mime="image/png",
-                use_container_width=True
-            )
+            try:
+                img_bytes = fig.to_image(format="png", width=1200, height=700, scale=2)
+                st.download_button(
+                    label="📷 PNG 이미지 다운로드",
+                    data=img_bytes,
+                    file_name=f"chart_{st.session_state.current_title or 'graph'}.png",
+                    mime="image/png",
+                    use_container_width=True
+                )
+            except Exception:
+                st.info("PNG 저장은 HTML을 받은 뒤 브라우저에서 인쇄/저장해주세요.")
 
         with col_exp2:
             html_bytes = fig.to_html(include_plotlyjs="cdn").encode()
@@ -223,14 +226,24 @@ if st.session_state.df is not None:
         for i, c in enumerate(st.session_state.chart_history):
             with st.expander(f"📊 {c['title'] or 'Graph'} #{i+1}"):
                 st.plotly_chart(c["fig"], use_container_width=True)
-                buf = c["fig"].to_image(format="png", width=1200, height=700, scale=2)
-                st.download_button(
-                    label="📷 다운로드",
-                    data=buf,
-                    file_name=f"chart_{i}.png",
-                    mime="image/png",
-                    key=f"history_dl_{i}"
-                )
+                try:
+                    buf = c["fig"].to_image(format="png", width=1200, height=700, scale=2)
+                    st.download_button(
+                        label="📷 PNG 다운로드",
+                        data=buf,
+                        file_name=f"chart_{i}.png",
+                        mime="image/png",
+                        key=f"history_dl_{i}"
+                    )
+                except Exception:
+                    html_bytes = c["fig"].to_html(include_plotlyjs="cdn").encode()
+                    st.download_button(
+                        label="🌐 HTML 다운로드",
+                        data=html_bytes,
+                        file_name=f"chart_{i}.html",
+                        mime="text/html",
+                        key=f"history_html_{i}"
+                    )
 
 else:
     st.info("👈 CSV 또는 Excel 파일을 업로드해주세요.")
