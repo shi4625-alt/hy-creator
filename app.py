@@ -6,7 +6,7 @@ import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 import re
 
-st.set_page_config(page_title="HY 인사이트", layout="wide")
+st.set_page_config(page_title="데이터랩 (DataLab)", layout="wide")
 
 # ---------- CSS ----------
 st.markdown("""
@@ -59,8 +59,8 @@ if "df" not in st.session_state:
 # ---------- Header ----------
 st.markdown("""
 <div class="main-header">
-    <h1>📊 HY 인사이트</h1>
-    <p>데이터 종류를 자동 감지하고 맞춤 분석을 제공합니다</p>
+    <h1>📊 데이터랩 (DataLab)</h1>
+    <p>데이터를 업로드하면 자동 분석 & 예쁜 그래프를 만들어드립니다</p>
 </div>
 """, unsafe_allow_html=True)
 
@@ -591,4 +591,4 @@ with tab3:
                 st.error(f"생성 실패: {e}")
     st.markdown('</div>', unsafe_allow_html=True)
 
-st.markdown('<div style="text-align:center;padding:2rem 0;color:#999;font-size:0.8rem;">HY 인사이트 · 데이터는 서버에 저장되지 않습니다</div>', unsafe_allow_html=True)
+st.markdown('<div style="text-align:center;padding:2rem 0;color:#999;font-size:0.8rem;">데이터랩 (DataLab) · 데이터는 서버에 저장되지 않습니다</div>', unsafe_allow_html=True)
